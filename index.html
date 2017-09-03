@@ -1,1 +1,377 @@
-<html><body>Hello Whirled</body></html>
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Everlast!</title>
+        <script src="phaser.min.js"></script>
+        <script src="easystar/easystar-0.3.0.min.js"></script>
+    </head>
+    <body>
+
+    <script type="text/javascript">
+
+    window.onload = function() {
+
+        var game = new Phaser.Game(640, 480, Phaser.AUTO, '', { init: init, preload: preload, create: create, update: update });
+        var easystar = new EasyStar.js();
+
+        function init () {
+        	//Phaser.Canvas.setImageRenderingCrisp(game.canvas);
+        }
+
+        function preload () {
+
+        	//game.scale.scaleMode = Phaser.ScaleManager.USER_SCALE;
+    		//game.scale.setUserScale(2.0,2.0);
+    		//game.scale.setMinMax(400, 300, 800, 600);
+
+            game.load.image('star', 'assets/star.png');
+            game.load.image('dude', 'assets/fighter1.png');
+
+            game.load.tilemap('roguelike2-tm', 'assets/roguelike2a.json', null, Phaser.Tilemap.TILED_JSON);
+            game.load.image('tiles', 'assets/dg_grounds32.png');
+            //game.load.image('characters', 'assets/dg_classm32trans.png');
+            game.load.spritesheet('characters', 'assets/dg_classm32trans.png', 32, 32);
+            game.load.spritesheet('gui', 'assets/dg_ground32gui.png', 32, 32);
+
+        }
+
+        var cursors;
+        var entities;
+        var entityIDs = 0;
+        var player;
+        var background;
+        var foreground;
+        var moveGrid = [];
+        var gameTime = 0;
+        var playerCharacters = [0,1,2];
+        var buttons = [];
+        var character1, character2, character3, ability1;
+        var charBG = [];
+        var charSelection = 0;
+
+        function create () {
+            map = game.add.tilemap('roguelike2-tm');
+
+            //  The first parameter is the tileset name, as specified in the Tiled map editor (and in the tilemap json file)
+            //  The second parameter maps this name to the Phaser.Cache key 'tiles'
+            map.addTilesetImage('dg_grounds32', 'tiles');
+            //map.addTilesetImage('dg_classm32trans', 'characters');
+            background = map.createLayer('background');
+            foreground = map.createLayer('foreground');
+            entities = game.add.group();
+            foreground.inputEnabled = true;
+            foreground.events.onInputDown.add(listener, this);
+            //entities = map.objects.entities;
+            console.log(map);
+            //player = game.add.sprite(32, 32, 'dude');
+            //var player = new Entity(11, 11, 'Jorn', {'spriteIndex': 11, 'behavior': {'wander':true}});
+            //player.anchor.x = 1;
+            //player.anchor.y = 1;
+            //player.smoothed = false;
+            //entities.add(player)
+
+            for (var i=0;i<map.objects.entities.length;i++) {
+            	var ent = map.objects.entities[i];
+            	var entity2 = new Entity(ent.x, ent.y, ent.name, ent.properties);
+	            //entity2.anchor.x = 1;
+	            //entity2.anchor.y = 1;
+	            //entity2.smoothed = false;
+	            //entities.add(entity2);
+            }
+
+            cursors = game.input.keyboard.createCursorKeys();
+
+            //Create movement grid
+            for (var i=0;i<map.height;i++) {
+        		if (typeof moveGrid[i] === 'undefined') {
+					moveGrid.push([]);
+				}
+				for (var j=0;j<map.width;j++) {
+					moveGrid[i][j] = map.layers[1].data[i][j].index;
+				}
+			} 
+
+			// GUI
+			charBG[0] = game.add.sprite(30, 340, 'gui', 3);
+			character1 = game.add.button(30, 340, 'characters', selectChar, this, entities.children[playerCharacters[0]].frame, entities.children[playerCharacters[0]].frame);
+			character1.id = 0;
+
+			charBG[1] = game.add.sprite(67, 340, 'gui', 5);
+			character2 = game.add.button(67, 340, 'characters', selectChar, this, entities.children[playerCharacters[1]].frame, entities.children[playerCharacters[1]].frame);
+			character2.id = 1;
+
+			charBG[2] = game.add.sprite(104, 340, 'gui', 5);
+			character3 = game.add.button(104, 340, 'characters', selectChar, this, entities.children[playerCharacters[2]].frame, entities.children[playerCharacters[2]].frame);
+			character3.id = 2;
+
+			ability1 = game.add.button(200, 340, 'characters', ability, this, 1, 1);
+			ability1.id = 1;
+            //  The score
+            var scoreText = game.add.text(16, 450, 'score: 0', { fontSize: '16px', fill: '#FFF' });
+
+            //  entityLogic Timer
+		    timer = game.time.create(false);
+		    timer.loop(400, entityLogic, this);
+		    timer.start();
+
+        }
+
+        function update () {
+   		/*
+            if (cursors.left.isDown)
+            else if (cursors.right.isDown)
+            if (cursors.up.isDown)
+            else if (cursors.down.isDown)
+		    if (game.input.mousePointer.isDown)
+	        if (game.input.keyboard.isDown(Phaser.Keyboard.SHIFT))
+		*/
+        }
+
+        function entityLogic () {
+        	var t0 = performance.now();
+        	for (var i=0;i<entities.children.length;i++) {
+        		var ent = entities.children[i];
+        		//if (gameTime % 2 == 0) {
+        		if (ent.currentAction == "attack") {
+        			attackTarget(i, ent.target);
+        		}
+    			if (ent.currentAction == "wander" && Math.random() > 0.9) {
+    				var moveTo = findOpenSquares(ent.tileX, ent.tileY, 1)[0];
+    				ent.moveX = moveTo.x;
+    				ent.moveY = moveTo.y;
+    				var wanderDistance = getDistance(ent.moveX, ent.moveY, ent.behavior.wanderCenterX, ent.behavior.wanderCenterY);
+    				//console.log(ent.behavior.wanderCenterX);
+    				if ( wanderDistance > ent.behavior.wanderRange) {
+    					ent.moveX = ent.behavior.wanderCenterX;
+    					ent.moveY = ent.behavior.wanderCenterY;
+    				}
+    			}
+    			if (ent.moveX > 0) {
+    				findPath(ent);
+    				//console.log('moving...');
+    			}
+        		//}
+        	}
+        	gameTime++;
+        	var t1 = performance.now();
+        	console.log('Took', (t1 - t0).toFixed(4), 'milliseconds to generate');
+        }
+
+        function walkAnimation (obj, obj2) {
+        	this.height = 32 + Math.sin(game.time.now * 0.01) * 2;
+        }
+
+        //Reset sprite dimension signal
+        var resetSpriteSig = new Phaser.Signal();
+	    resetSpriteSig.add(resetSprite, game);
+
+        function resetSprite (obj) {
+        	obj.height = obj.texture.frame.height;
+        	obj.width = obj.texture.frame.width;
+        }
+
+        function selectChar(obj) {
+        	console.log(obj.id);
+        	charBG[0].frame = 5;
+        	charBG[1].frame = 5;
+        	charBG[2].frame = 5;
+        	charSelection = obj.id;
+        	charBG[obj.id].frame = 3;
+        }
+
+        function ability(obj) {
+        	console.log(obj.id);
+        }
+
+		Entity = function (x, y, name = 'entity', properties = {}) {
+			this.tileX = Math.ceil((x - 10)/32);
+		    this.tileY = Math.ceil((y - 10)/32);
+		    this.name = name || 'generic entity';
+		    //if (properties) {
+		    this.moveX = properties.moveX || 0;
+		    this.moveY = properties.moveY || 0;
+		    this.hp = properties.hp || 100;
+		    this.currentAction = properties.currentAction || "idle";
+		    //this.behavior = properties.behavior || 'wander';
+		    this.behavior = new Behavior(this, properties.behavior || '');
+		    if (this.behavior.wander == true) {
+		    	this.currentAction = "wander";
+		    }
+		    //if (properties.hasOwnProperty('behaviors')) {
+		    //	this.behaviors = properties.behaviors;
+		    //}
+		    //this.wanderRange = properties.wanderRange || 3;
+		    //this.wanderCenterX = properties.wanderCenterX || 0;
+		    //this.wanderCenterY = properties.wanderCenterY || 0;
+		    //}
+		    //else {
+		    //	this.moveX = 0;
+		    //	this.moveY = 0;
+		    //}
+
+		    Phaser.Sprite.call(this, game, this.tileX * 32, this.tileY * 32, 'characters', properties.spriteIndex);
+		    this.anchor.x = 1;
+	        this.anchor.y = 1;
+	        this.smoothed = false;
+
+	        this.eid = entityIDs;
+	        entities.addAt(this, entityIDs);
+	        entityIDs++;
+		};
+
+		Entity.prototype = Object.create(Phaser.Sprite.prototype);
+		Entity.prototype.constructor = Entity;
+
+		Entity.prototype.update = function () {
+			//console.log("HELLO!");
+			//this.findPath();
+		};
+
+		Entity.prototype.move = function (x,y) {
+			var deltaX = x * 32;
+		    var deltaY = y * 32;
+		    this.tileX = x;
+		    this.tileY = y;
+        	var tween = game.add.tween(this).to( { x: deltaX, y: deltaY }, 400, Phaser.Easing.Sinusoidal.Out, true);
+            tween.onUpdateCallback(walkAnimation, this);
+            tween.onComplete.add(function() { resetSprite(this); }, this);// = resetSpriteSig;
+            if (this.tileX == this.moveX && this.tileY == this.moveY) {
+            	this.moveX = 0;
+            	this.moveY = 0;
+            	//console.log("Reached destination " + this.name);
+            }
+            //console.log(this.x + " " + this.y + " " + this.tileX + " " + this.tileY);
+        }
+
+        Behavior = function(entity, properties) {
+        	// stand, follow, wander
+        	this.follow = properties.follow || false;
+        	this.wander = properties.wander || false;
+        	this.wanderRange = properties.wanderRange || 3;
+        	this.wanderFrequency = properties.wanderFrequency || 100;
+		    this.wanderCenterX = entity.tileX;
+		    this.wanderCenterY = entity.tileY;
+		    this.followTarget = -1;
+        }
+
+        /*
+        BehavorItem = function(entity, properties) {
+        	this.type = properties.type;
+		    this.target = properties.target || -1;
+		    this.range = properties.range || -1;
+		    this.data = properties.data || '';
+        }
+        */
+
+		function findPath(targetEntity) {
+		    easystar.setGrid(moveGrid);
+		    easystar.setAcceptableTiles([-1]);
+		    //console.log(targetEntity.x + " " + targetEntity.y + " " + targetEntity.tileX + " " + targetEntity.tileY);
+		    easystar.stopAvoidingAllAdditionalPoints();
+		    for (var i=0;i<entities.children.length;i++) {
+		        if (!(entities.children[i].tileX == targetEntity.moveX && entities.children[i].tileY == targetEntity.moveY)) {
+		            easystar.avoidAdditionalPoint(entities.children[i].tileX - 1, entities.children[i].tileY - 1);
+		            //console.log("avoid point: " + level.entities[i].posX + " " + level.entities[i].posY)
+		        }
+		    }
+		    easystar.findPath(targetEntity.tileX - 1, targetEntity.tileY - 1, targetEntity.moveX - 1, targetEntity.moveY - 1, function( path ) {
+		    	try {
+		    		if (path[1] != null && checkForEntity(path[1].x + 1, path[1].y + 1) == -1) {
+		    			targetEntity.move(path[1].x + 1, path[1].y + 1);
+		    		} else {
+		    			targetEntity.moveX = 0;
+            			targetEntity.moveY = 0;
+		    			return;
+		    		}
+		    	}
+		    	catch(err) {
+		    		console.log(targetEntity.name + ": Invalid path");
+		    		targetEntity.moveX = 0;
+            		targetEntity.moveY = 0;
+		    		return;
+		    	}
+			});
+			easystar.calculate();
+		}
+
+		function listener () {
+
+			var clickX = game.input.activePointer.positionDown.x + game.camera.x;
+			var clickY = game.input.activePointer.positionDown.y + game.camera.y;
+			var posX = Math.ceil((clickX)/32);
+			var posY = Math.ceil((clickY)/32);
+		    //console.log(this);
+		    //console.log(Math.ceil((clickX)/32) + " " + Math.ceil((clickY)/32));
+		    //console.log(clickX + " " + clickY);
+		    if (posX <= map.width && posY <= map.height) {
+		    	entities.children[charSelection].moveX = posX;
+		    	entities.children[charSelection].moveY = posY;
+			}
+
+		}
+
+		function findOpenSquares (centerX,centerY,radius,randomize = true,includeCenter = false) {
+			var openSquares = [];
+			for (var i = centerX - radius;i <= centerX + radius;i++){
+				for (var j = centerY - radius;j <= centerY + radius;j++){
+					if (checkMoveableTile(i,j) && !(i == centerX && j == centerY)) {
+						openSquares.push({"x":i,"y":j});
+					}
+				}
+			}
+			if (includeCenter)
+				openSquares.push({"x":centerX,"y":centerY});
+			return (randomize) ? shuffleArray(openSquares) : openSquares;
+		}
+
+		function checkMoveableTile (x,y) {
+			if (x > 0 && x <= map.width && y > 0 && y <= map.height) {
+				return moveGrid[y-1][x-1] == -1;
+			} else {
+				return false;
+			}
+		}
+
+		function checkForEntity (x,y) {
+			for (var i=0;i<entities.children.length;i++) {
+				//console.log(entities.children[i].tileX + " " + entities.children[i].tileY + " " + x + " " + y);
+				if (entities.children[i].tileX == x && entities.children[i].tileY == y) {
+					//console.log("found entity");
+					return i;
+				}
+			}
+			//console.log("found no entity");
+			return -1;
+		}
+
+		/**
+		 * Randomize array element order in-place.
+		 * Using Durstenfeld shuffle algorithm.
+		 */
+		function shuffleArray(array) {
+		    for (var i = array.length - 1; i > 0; i--) {
+		        var j = Math.floor(Math.random() * (i + 1));
+		        var temp = array[i];
+		        array[i] = array[j];
+		        array[j] = temp;
+		    }
+		    return array;
+		}
+
+		function getDistance(x1, y1, x2, y2, returnXY = false) {
+			var deltaX = x2 - x1;
+		    var deltaY = y2 - y1;
+		    if (returnXY) {
+		    	return [deltaX, deltaY];
+		    } else {
+		    	return Math.abs(deltaX) + Math.abs(deltaY);
+			}
+		}
+
+    };
+
+    </script>
+
+    </body>
+</html>
