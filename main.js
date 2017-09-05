@@ -87,9 +87,6 @@
 			background.scale.set(scale);
 			foreground.scale.set(scale);
 			entities.scale.set(scale);
-			
-			foreground.cacheAsBitmap = true;
-			background.cacheAsBitmap = true;
 
 			//game.camera.follow(entities.children[charSelection]);
 			//game.camera.follow(character1);
