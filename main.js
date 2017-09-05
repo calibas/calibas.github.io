@@ -54,6 +54,8 @@
             entities = game.add.group();
             foreground.inputEnabled = true;
             foreground.events.onInputDown.add(listener, this);
+			foreground.cacheAsBitmap = true;
+			background.cacheAsBitmap = true;
             //entities = map.objects.entities;
             console.log(map);
             //player = game.add.sprite(32, 32, 'dude');
