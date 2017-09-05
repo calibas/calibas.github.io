@@ -54,8 +54,6 @@
             entities = game.add.group();
             foreground.inputEnabled = true;
             foreground.events.onInputDown.add(listener, this);
-			foreground.cacheAsBitmap = true;
-			background.cacheAsBitmap = true;
             //entities = map.objects.entities;
             console.log(map);
             //player = game.add.sprite(32, 32, 'dude');
@@ -89,6 +87,9 @@
 			background.scale.set(scale);
 			foreground.scale.set(scale);
 			entities.scale.set(scale);
+			
+			foreground.cacheAsBitmap = true;
+			background.cacheAsBitmap = true;
 
 			//game.camera.follow(entities.children[charSelection]);
 			//game.camera.follow(character1);
