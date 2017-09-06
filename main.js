@@ -1,7 +1,7 @@
 
     //window.onload = function() {
     	var scale = 2;
-        var game = new Phaser.Game("100%", "100%", Phaser.AUTO, '', { init: init, preload: preload, create: create, update: update });
+        var game = new Phaser.Game("100%", "100%", Phaser.AUTO, '', { init: init, preload: preload, create: create, update: update }, false, false);
         var easystar = new EasyStar.js();
         
 
