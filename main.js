@@ -104,8 +104,6 @@
         }
 
         function update () {
-        	game.camera.focusOnXY(100,100);
-        	game.camera.x++;
    		/*
             if (cursors.left.isDown)
             else if (cursors.right.isDown)
@@ -117,7 +115,7 @@
         }
 
         function walkAnimation (obj, obj2) {
-        	this.height = 32 + Math.sin(game.time.now * 0.01) * 2;
+        	//this.height = 32 + Math.sin(game.time.now * 0.01) * 2;
         }
 
         window.addEventListener('resize', resizeGame);
