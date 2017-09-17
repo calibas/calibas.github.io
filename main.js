@@ -1,6 +1,6 @@
 "use strict";
 
-console.log("RoNiv-0.13");
+console.log("RoNiv-0.14");
 //window.onload = function() {
 let scale = 2;
 let game = new Phaser.Game("100%", "100%", Phaser.AUTO, '', { init: init, preload: preload, create: create, update: update }, false, false);
@@ -62,6 +62,7 @@ function create () {
 	//  The second parameter maps this name to the Phaser.Cache key 'tiles'
 	map.addTilesetImage('dg_grounds32', 'tiles');
 	//map.addTilesetImage('dg_classm32trans', 'characters');
+	map.cacheAsBitmap = true;
 	background = map.createLayer('background');
 	foreground = map.createLayer('foreground');
 	entities = game.add.group();
