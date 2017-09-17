@@ -14,8 +14,22 @@ function init () {
 }
 
 function preload () {
-	game.scale.scaleMode = Phaser.ScaleManager.RESIZE;
-	game.stage.smoothed = false;
+	//game.scale.scaleMode = Phaser.ScaleManager.RESIZE;
+
+    this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    //this.scale.setMinMax(480, 260, 1024, 768);
+    this.scale.pageAlignHorizontally = true;
+    this.scale.pageAlignVertically = true;
+
+    if (!this.game.device.desktop)
+    {
+        this.scale.forceOrientation(true, false);
+        this.scale.setResizeCallback(this.gameResized, this);
+        this.scale.enterIncorrectOrientation.add(this.enterIncorrectOrientation, this);
+        this.scale.leaveIncorrectOrientation.add(this.leaveIncorrectOrientation, this);
+    }
+
+
     game.renderer.renderSession.roundPixels = true;
 	game.world.setBounds(0,0,0,2000);
 	//game.scale.setUserScale(scale,scale);
