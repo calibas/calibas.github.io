@@ -47,9 +47,9 @@ function create () {
 	//  The second parameter maps this name to the Phaser.Cache key 'tiles'
 	map.addTilesetImage('dg_grounds32', 'tiles');
 	//map.addTilesetImage('dg_classm32trans', 'characters');
-	map.cacheAsBitmap = true;
 	background = map.createLayer('background');
 	foreground = map.createLayer('foreground');
+	foreground.cacheAsBitmap = true;
 	entities = game.add.group();
 	foreground.inputEnabled = true;
 	foreground.events.onInputDown.add(listener, this);
