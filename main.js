@@ -24,7 +24,7 @@ function preload () {
 	game.load.image('star', 'assets/star.png');
 	game.load.image('dude', 'assets/fighter1.png');
 
-	game.load.tilemap('roguelike2-tm', 'assets/roguelike2a.json', null, Phaser.Tilemap.TILED_JSON);
+	game.load.tilemap('roguelike2-tm', 'assets/roguelike2b.json', null, Phaser.Tilemap.TILED_JSON);
 	game.load.image('tiles', 'assets/dg_grounds32.png');
 	//game.load.image('characters', 'assets/dg_classm32trans.png');
 	game.load.spritesheet('characters', 'assets/dg_classm32trans.png', 32, 32);
