@@ -14,23 +14,8 @@ function init () {
 }
 
 function preload () {
-	//game.scale.scaleMode = Phaser.ScaleManager.RESIZE;
+	game.scale.scaleMode = Phaser.ScaleManager.RESIZE;
 
-    this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-    //this.scale.setMinMax(480, 260, 1024, 768);
-    this.scale.pageAlignHorizontally = true;
-    this.scale.pageAlignVertically = true;
-
-    if (!this.game.device.desktop)
-    {
-        this.scale.forceOrientation(true, false);
-        this.scale.setResizeCallback(this.gameResized, this);
-        this.scale.enterIncorrectOrientation.add(this.enterIncorrectOrientation, this);
-        this.scale.leaveIncorrectOrientation.add(this.leaveIncorrectOrientation, this);
-    }
-
-
-    game.renderer.renderSession.roundPixels = true;
 	game.world.setBounds(0,0,0,2000);
 	//game.scale.setUserScale(scale,scale);
 	//game.scale.setMinMax(400, 300, 800, 600);
@@ -38,7 +23,7 @@ function preload () {
 	game.load.image('star', 'assets/star.png');
 	game.load.image('dude', 'assets/fighter1.png');
 
-	game.load.tilemap('roguelike2-tm', 'assets/roguelike2b.json', null, Phaser.Tilemap.TILED_JSON);
+	game.load.tilemap('roguelike2-tm', 'assets/roguelike2a.json', null, Phaser.Tilemap.TILED_JSON);
 	game.load.image('tiles', 'assets/dg_grounds32.png');
 	//game.load.image('characters', 'assets/dg_classm32trans.png');
 	game.load.spritesheet('characters', 'assets/dg_classm32trans.png', 32, 32);
