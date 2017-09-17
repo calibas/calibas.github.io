@@ -1,6 +1,6 @@
 "use strict";
 
-console.log("RoNiv-0.12");
+console.log("RoNiv-0.13");
 //window.onload = function() {
 let scale = 2;
 let game = new Phaser.Game("100%", "100%", Phaser.AUTO, '', { init: init, preload: preload, create: create, update: update }, false, false);
@@ -16,6 +16,7 @@ function init () {
 function preload () {
 	game.scale.scaleMode = Phaser.ScaleManager.RESIZE;
 	game.stage.smoothed = false;
+    game.renderer.renderSession.roundPixels = true;
 	game.world.setBounds(0,0,0,2000);
 	//game.scale.setUserScale(scale,scale);
 	//game.scale.setMinMax(400, 300, 800, 600);
