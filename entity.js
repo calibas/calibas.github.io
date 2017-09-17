@@ -1,16 +1,16 @@
 function entityLogic () {
-	var t0 = performance.now();
-	for (var i=0;i<entities.children.length;i++) {
-		var ent = entities.children[i];
+	let t0 = performance.now();
+	for (let i=0;i<entities.children.length;i++) {
+		let ent = entities.children[i];
 		//if (gameTime % 2 == 0) {
-		if (ent.currentAction == "attack") {
+		if (ent.currentAction === "attack") {
 			attackTarget(i, ent.target);
 		}
-		if (ent.currentAction == "wander" && Math.random() > 0.9) {
-			var moveTo = findOpenSquares(ent.tileX, ent.tileY, 1)[0];
+		if (ent.currentAction === "wander" && Math.random() > 0.9) {
+			let moveTo = findOpenSquares(ent.tileX, ent.tileY, 1)[0];
 			ent.moveX = moveTo.x;
 			ent.moveY = moveTo.y;
-			var wanderDistance = getDistance(ent.moveX, ent.moveY, ent.behavior.wanderCenterX, ent.behavior.wanderCenterY);
+			let wanderDistance = getDistance(ent.moveX, ent.moveY, ent.behavior.wanderCenterX, ent.behavior.wanderCenterY);
 			//console.log(ent.behavior.wanderCenterX);
 			if ( wanderDistance > ent.behavior.wanderRange) {
 				ent.moveX = ent.behavior.wanderCenterX;
@@ -24,7 +24,7 @@ function entityLogic () {
 		//}
 	}
 	gameTime++;
-	var t1 = performance.now();
+	let t1 = performance.now();
 	console.log('Took', (t1 - t0).toFixed(4), 'milliseconds to generate');
 }
 
@@ -73,14 +73,14 @@ Entity = function (x, y, name = 'entity', properties = {}) {
         };
 
         Entity.prototype.move = function (x,y) {
-            var deltaX = x * 32;
-            var deltaY = y * 32;
+            let deltaX = x * 32;
+            let deltaY = y * 32;
             this.tileX = x;
             this.tileY = y;
-            var tween = game.add.tween(this).to( { x: deltaX, y: deltaY }, 400, Phaser.Easing.Sinusoidal.Out, true);
+            let tween = game.add.tween(this).to( { x: deltaX, y: deltaY }, 400, Phaser.Easing.Sinusoidal.Out, true);
             tween.onUpdateCallback(walkAnimation, this);
             tween.onComplete.add(function() { resetSprite(this); }, this);// = resetSpriteSig;
-            if (this.tileX == this.moveX && this.tileY == this.moveY) {
+            if (this.tileX === this.moveX && this.tileY === this.moveY) {
                 this.moveX = 0;
                 this.moveY = 0;
                 //console.log("Reached destination " + this.name);
