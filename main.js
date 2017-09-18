@@ -3,7 +3,7 @@
 console.log("RoNiv-0.14");
 //window.onload = function() {
 let scale = 2;
-let game = new Phaser.Game("100%", "100%", Phaser.AUTO, '', { init: init, preload: preload, create: create, update: update }, false, false);
+let game = new Phaser.Game("100%", "100%", Phaser.WEBGL, '', { init: init, preload: preload, create: create, update: update }, false, false);
 let easystar = new EasyStar.js();
 let map;
 let timer;
