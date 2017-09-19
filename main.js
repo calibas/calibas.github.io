@@ -1,6 +1,6 @@
 "use strict";
 
-let version = "RoNiv-0.21";
+let version = "RoNiv-0.22";
 //window.onload = function() {
 let scale = 2;
 let game = new Phaser.Game("100%", "100%", Phaser.AUTO, '', { init: init, preload: preload, create: create, update: update }, false, false);
