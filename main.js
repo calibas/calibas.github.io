@@ -103,6 +103,7 @@ function update () {
 	if (game.input.mousePointer.isDown)
 	if (game.input.keyboard.isDown(Phaser.Keyboard.SHIFT))
 */
+	foreground.updateCache();
 }
 
 function walkAnimation (obj, obj2) {
