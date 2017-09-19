@@ -1,9 +1,9 @@
 "use strict";
 
-console.log("RoNiv-0.14");
+let version = "RoNiv-0.15";
 //window.onload = function() {
 let scale = 2;
-let game = new Phaser.Game("100%", "100%", Phaser.WEBGL, '', { init: init, preload: preload, create: create, update: update }, false, false);
+let game = new Phaser.Game("100%", "100%", Phaser.AUTO, '', { init: init, preload: preload, create: create, update: update }, false, false);
 let easystar = new EasyStar.js();
 let map;
 let timer;
@@ -83,6 +83,7 @@ function create () {
 	game.camera.follow(entities.children[charSelection], Phaser.Camera.FOLLOW_LOCKON, 0.9, 0.9);
 
 	createGUI();
+	resetGUI();
 
 	//  entityLogic Timer
 	timer = game.time.create(false);
@@ -112,6 +113,7 @@ function resizeGame() {
 	//console.log(window.innerWidth / scale);
 	//console.log(game.scale.scaleFactor.x);
 	//game.scale.setGameSize(Math.ceil(window.innerWidth / scale), Math.ceil(window.innerHeight / scale));
+	resetGUI();
 	game.scale.refresh();
 }
 
