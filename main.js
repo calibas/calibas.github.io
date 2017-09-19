@@ -1,6 +1,6 @@
 "use strict";
 
-let version = "RoNiv-0.20";
+let version = "RoNiv-0.21";
 //window.onload = function() {
 let scale = 2;
 let game = new Phaser.Game("100%", "100%", Phaser.AUTO, '', { init: init, preload: preload, create: create, update: update }, false, false);
@@ -50,7 +50,7 @@ function create () {
 	//map.addTilesetImage('dg_classm32trans', 'characters');
 	background = map.createLayer('background');
 	foreground = map.createLayer('foreground');
-	foreground.cacheAsBitmap = true;
+	foreground.cacheAsBitmap = false;
 	foreground.smoothed = false;
 	entities = game.add.group();
 	foreground.inputEnabled = true;
