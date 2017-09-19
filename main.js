@@ -1,9 +1,9 @@
 "use strict";
 
-let version = "RoNiv-0.16";
+let version = "RoNiv-0.17";
 //window.onload = function() {
 let scale = 2;
-let game = new Phaser.Game("100%", "100%", Phaser.CANVAS, '', { init: init, preload: preload, create: create, update: update }, false, false);
+let game = new Phaser.Game("100%", "100%", Phaser.WEBGL_MULTI, '', { init: init, preload: preload, create: create, update: update }, false, false);
 let easystar = new EasyStar.js();
 let map;
 let timer;
