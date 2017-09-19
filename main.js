@@ -1,6 +1,6 @@
 "use strict";
 
-let version = "RoNiv-0.19";
+let version = "RoNiv-0.20";
 //window.onload = function() {
 let scale = 2;
 let game = new Phaser.Game("100%", "100%", Phaser.AUTO, '', { init: init, preload: preload, create: create, update: update }, false, false);
@@ -51,6 +51,7 @@ function create () {
 	background = map.createLayer('background');
 	foreground = map.createLayer('foreground');
 	foreground.cacheAsBitmap = true;
+	foreground.smoothed = false;
 	entities = game.add.group();
 	foreground.inputEnabled = true;
 	foreground.events.onInputDown.add(listener, this);
