@@ -1,9 +1,9 @@
 "use strict";
 
-let version = "RoNiv-0.17";
+let version = "RoNiv-0.19";
 //window.onload = function() {
 let scale = 2;
-let game = new Phaser.Game("100%", "100%", Phaser.WEBGL_MULTI, '', { init: init, preload: preload, create: create, update: update }, false, false);
+let game = new Phaser.Game("100%", "100%", Phaser.AUTO, '', { init: init, preload: preload, create: create, update: update }, false, false);
 let easystar = new EasyStar.js();
 let map;
 let timer;
@@ -41,8 +41,9 @@ let playerCharacters = [0,1,2];
 let charSelection = 0;
 
 function create () {
+	game.renderer.renderSession.roundPixels = true;
 	map = game.add.tilemap('roguelike2-tm');
-
+	
 	//  The first parameter is the tileset name, as specified in the Tiled map editor (and in the tilemap json file)
 	//  The second parameter maps this name to the Phaser.Cache key 'tiles'
 	map.addTilesetImage('dg_grounds32', 'tiles');
