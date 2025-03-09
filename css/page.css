@@ -1,0 +1,10 @@
+body { font-family: sans-serif; }
+#controls {
+  margin: 10px 0;
+}
+#my-table .tabulator-col-title {
+  text-transform: capitalize;
+}
+.link-icon {
+  width:20px;
+}
