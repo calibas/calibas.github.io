@@ -1,0 +1,272 @@
+#title:My Music;type:csv
+artist,song,links
+4 Non Blondes,Spaceman,youtube:OSWKw15rCoI
+4 Non Blondes,What's Up,youtube:6NXnxTNIWkc
+A-ha,Take On Me,youtube:djV11Xbc914
+AC/DC,Thunderstruck,youtube:v2AC41dglnM
+Aesop Rock,Long Legged Larry,youtube:us3pCHd8PLs
+Alan Gogoll,
+Alanis Morissette,Ironic,youtube:H4bIXVTsJck
+Alanis Morissette,Thank U,youtube:OOgpT5rEKIU
+Alanis Morissette,You Learn,youtube:GFW-WfuX2Dk
+Allison Russell,Nightflyer,youtube:eovUiXuaM1k
+Allison Young,Sh-Boom (Life Could Be A Dream),youtube:On58Mq52UlY
+Amii Stewart,Knock On Wood,youtube:vZV9pDeoajA
+Andy Williams,Born Free,youtube:sGdqUGrpvDU
+Annie Lennox,Little Bird,youtube:pjbNLVQ_Iwk
+Annie Lennox,Walking on Broken Glass,youtube:y25stK5ymlA
+Aretha Franklin,I Say A Little Prayer,youtube:mSJiWBKtI_M
+Aretha Franklin,Natural Woman,
+Aretha Franklin,Respect,
+Average White Band,Pick Up the Pieces,
+B.T. Express,Do It ('Til You're Satisfied),youtube:yvIQX_eDmN0
+Beethoven,9th Symphony (Chicago Symphony Orchestra),
+Beethoven,Moonlight Sonata,
+Bellamy Brothers,Let Your Love Flow,youtube:QasRm6r2B2Q
+Bette Midler,The Rose,
+Betty Davis,They Say I'm Different,youtube:trDu_b1C3YU
+Bill Withers,Lovely Day,
+Bill Withers,Use Me,youtube:NuYDKzky4z0
+Billie Holiday,Strange Fruit,
+Billy Joel,It's Still Rock and Roll to Me
+Billy Joel,Piano Man,
+Billy Joel,We Didn't Start the Fire,
+Billy Preston,Nothing From Nothing,youtube:8HqyEHqEYho
+Billy Preston,Will It Go Round in Circles,youtube:FFHMdY9HijM
+Billy Strings,Meet Me at the Creek,youtube:WLah0JzaX8c
+Billy Thorpe,Children of the Sun,youtube:XR2oct3zeTM
+Blind Melon,No Rain,https://blindmelon.com/
+Blue Swede,Hooked on a Feeling,youtube:NrI-UBIB8Jk
+Bob Marley,Three Little Birds,
+Bob Marley,Cornerstone,
+Bob Seger,Feel Like A Number,
+Bob Seger,
+Bobby McFerrin,Don't Worry Be Happy
+Boots Randolph,Yakety Sax,youtube:ZnHmskwqCCQ
+Cab Calloway,Minnie the Moocher,
+Cameo,Word Up,
+Chaka Khan,Tell Me Something Good,
+Chuck Berry,Johnny B. Goode,youtube:Uf4rxCB4lys
+Corinne Bailey Rae,Put Your Records On,
+"Crosby, Stills, Nash & Young",Carry On,
+Cyndi Lauper,True Colors,
+David Bowie,Dancing In The Street,
+David Bowie,Let's Dance,
+Donna Lewis,I Love You Always Forever,
+Dr Funk And The Good Times,Roadrunner,
+Elton John,Bennie and the Jets,
+Elton John,Circle of Life,
+Elton John,I'm Still Standing,
+Elton John,Pinball Wizard,youtube:xyFB3QjGX0A
+Elton John,Rocket Man,
+Eurythmics,Sweet Dreams
+Exuma,Obeah Man,youtube:CJKPucU4Y_c
+Fanny,Charity Ball,
+Fela Kuti,Just Like That,youtube:pyP796l21ks
+Fela Kuti,Shakara,youtube:vvYxd35xFx8
+Fela Kuti,Water No Get Enemy,
+Feven Yoseph,Sewer Fiqir,youtube:v2t_CfgYLLg
+Fleetwood Mac,Landslide,
+Fleetwood Mac,Oh Well,youtube:VQmmByJwKFI
+George Benson,On Broadway,youtube:EAIp7yFk0tk
+George Harrison,What Is Life
+George Michael,Faith,
+George Michael,Freedom,
+George Thorogood,Get A Haircut
+Gerry Rafferty,Baker Street,
+Gershwin,Rhapsody In Blue,
+Godspell,God Save The People,
+Gov't Mule,Soulshine,youtube:DUn6kYSnt3E
+Grand Funk Railroad,Closer To Home,
+Grateful Dead,Ripple,
+Grateful Dead,Scarlet Begonias,
+Grateful Dead,St. Stephen,
+Grateful Dead,Sugaree,
+Grateful Dead,Terrapin Station,
+Grateful Dead,Truckin,
+Grieg,In the Hall of the Mountain King,youtube:kLp_Hh6DKWc
+Herbie Hancock,Chameleon,youtube:WYRrIBqKsJ4
+Herbie Hancock,Watermelon Man,youtube:ppJQKfqhFfE
+Hot Chocolate,You Sexy Thing,youtube:WmeMdEZPcpg
+Hot Chocolate,
+Iggy Pop,Lust for Life,
+India Arie,I Am Light,
+India Arie,Video,
+Indigo Girls,Closer to Fine,youtube:HUgwM1Ky228
+Indigo Girls,Galileo,
+Israel Kamakawiwo'ole,Over the Rainbow,
+Jack White,Archbishop Harold Holmes,
+Jacob Collier,A Rock Somewhere (Anoushka Shankar),
+James Brown,People Get Up And Drive Your Funky Soul,youtube:h0chqsOCQDI
+James Brown,Sex Machine,
+Jane's Addiction,Mountain Song,
+Jason Mraz,93 Million Miles
+Jason Mraz,Have It All,
+Jason Mraz,Living In The Moment,
+Jason Mraz,Love Is Still The Answer,
+Jimmy Cliff,I Can See Clearly Now,
+Jimmy Cliff,The Harder They Come,youtube:7Znh0OM9jiA
+Joe Cocker,She Came In Through The Bathroom Window
+Joe Cocker,With a Little Help From My Friends,
+Joe Cocker,You Are So Beautiful,
+Joe Cocker,You Can Leave Your Hat On,
+John Denver,Annie's Song,
+John Denver,Heart to Heart,
+John Denver,Rocky Mountain High,
+John Denver,Take Me Home Country Roads,
+John Denver,Thank God I'm A Country Boy,
+John Trudell,
+Joni Mitchell,Both Sides Now
+Kate Bush,Army Dreamers,
+Kate Bush,Babooshka,
+Kate Bush,Wuthering Heights,
+Little Feat,Dixie Chicken,youtube:yaHEfJApEVM
+Little Stranger,Sing It High,youtube:0y6gvSuwOzE
+Little Tybee,More Like Jason,youtube:s0n4pPuMcf0
+Live,Lightning Crashes,youtube:xsJ4O-nSveg
+Living Color,Cult of Personality,
+Madonna,Ray of Light,
+Magdalena Bay,
+Magdalena Matthey,
+Malte Marten,
+Masayoshi Takanaka,
+Meat Loaf,Bat Out Of Hell,
+Meat Loaf,Paradise by the Dashboard Light,
+Meters,Hey Pocky A-Way,
+Michael Jackson,Don't Stop 'Til You Get Enough,youtube:yURRmWtbTbo
+Michael Jackson,Off The Wall,
+Mike Love,Permanent Holiday
+Morgan James,Sledgehammer,
+Mr. Mister,Broken Wings,
+Nahko And Medicine For The People,Budding Trees,
+Nat King Cole,Nature Boy,
+Natasha Bedingfield,Unwritten
+Nathaniel Rateliff,I Need Never Get Old
+Neil Diamond,Holly Holy,
+Neil Diamond,I Am I Said,
+Nelly Furtado,I'm Like A Bird
+NENA,99 Luftballons,
+Newen Afrobeat,Opposite People
+Ohio Players,Love Rollercoaster,
+Otava Yo,Groove,youtube:YbBU06irWT8
+Pachelbel,Canon in D,
+Parliament,Atomic Dog,
+Parliament,Flashlight,
+Parliament,Mothership Connection,
+Parliament,One Nation Under a Groove,
+Paul Simon,50 Ways to Leave Your Lover
+Paul Simon,Diamonds On The Soles Of Her Shoes,
+Paul Simon,Me and Julio Down by the Schoolyard,
+Paul Simon,You Can Call Me Al,
+Penguin Cafe Orchestra,
+Peter Gabriel,Big Time,youtube:PBAl9cchQac
+Peter Gabriel,Here Comes the Flood,youtube:3C23LikPhWs
+Peter Gabriel,In Your Eyes
+Peter Gabriel,Sledghammer,
+Peter Gabriel,Solsbury Hill,
+Peter Gabriel,Steam,
+Phil Collins,In the Air Tonight,
+Pink Floyd,Shine On You Crazy Diamond,youtube:54W8kktFE_o
+Pixies,Where Is My Mind,
+Postmodern Jukebox,Dream On,
+Primus,Mr Krinkle,
+Primus,Over The Falls,
+Prince,1999,youtube:UWC4X_rTRsA
+Prince,Kiss,
+Prince,Purple Rain,
+Prince,Raspberry Beret,
+Queen,Bohemian Rhapsody,
+Queen,Don't Stop Me Now,
+Queen,Fat Bottom Girls,
+Queen,I Want to Break Free,
+Queen,Keep Yourself Alive,
+Queen,Somebody To Love,
+Queen,Under Pressure,
+Ray Stevens,Everything is Beautiful,
+Redbone,Come And Get Your Love,
+REM,Shiny Happy People,
+REM,Strange Currencies,
+Resistance Revival Chorus,Everybody Deserves to Be Free,
+Resistance Revival Chorus,This Joy,
+RHCP,Behind the Sun,youtube:sHuMi-cH0Uo
+Rob Thomas,Someday,youtube:H6pODq8_FxE
+Rush,Closer to the Heart,
+Rusted Root,Send Me On My Way
+Sade,Feel No Pain,
+Sade,Mermaid,
+Sade,The Sweetest Taboo,
+Sam & Dave,Hold On I'm Comin',
+Sam & Dave,Soul Man,
+Santana,Taboo,youtube:ZvzcOCLmHoM
+Sara Bareilles,Brave,
+Sarah Vaughan,Smooth Operator,youtube:l-ODUKHFVo0
+Scary Pockets,Walk This Way,
+Shaolin Afronauts,Flight Of The Ancient,youtube:mVphcpIoTpc
+Sierra Ferrell,I Could Drive You Crazy
+Sinéad O'Connor,Foggy Dew,
+Sinéad O'Connor,Nothing Compares 2 U,
+Sister Sledge,We Are Family,
+Sly & The Family Stone,Everyday People
+Sly & The Family Stone,Thank You,
+Smash Mouth,Walkin on the Sun,
+Small Faces,Itchycoo Park,
+Spacehog,In The Meantime,youtube:PCsGRCf8T9Y
+Steely Dan,Aja,
+Steam Powered Giraffe,Intertwined,youtube:xfoi_RCY2_Y
+Stevie Wonder,As,
+Stevie Wonder,Sir Duke,youtube:EnNgASBdCeo
+The Animals,Don't Let Me Be Misunderstood,youtube:YMDrTMnm1IE
+The Avalanches,Since I Left You
+The B-52's,Debbie,youtube:rSEMjZ6YqGI
+The B-52's,Good Stuff,
+The B-52's,Love Shack,
+The B-52's,Roam,
+The B-52's,Rock Lobster,
+The Band,The Weight,
+The Beatles,Hey Jude,
+The Cranberries,Linger
+The Cure,Friday I'm In Love
+The Darkness,I Believe In A Thing Called Love,youtube:tlq-Le7V18Q
+The Doobie Brothers,Black Water,youtube:RsP3rFJJk1Y
+The Flaming Lips,She Don't Use Jelly
+The Guess Who,Share The Land
+The Headhunters,God Make Me Funky,youtube:C8hi3ZnhFac
+The Hollies,"He Ain't Heavy, He's My Brother"
+The Isley Brothers,Live It Up,
+The J.B.'s,Doing It To Death,
+The J.B.'s,More Peas,
+The Ozark Mountain Daredevils,If You Wanna Get To Heaven,
+The Police,Every Little Thing She Does Is Magic,
+The Spinners,The Rubberband Man,youtube:KSMVflSBKx8
+The Time,Jungle Love,
+The Traveling Wilburys,End Of The Line
+The Wailin' Jennys,Wildflowers,
+The Who,Baba O'Riley,youtube:QRTNm6GLJYI
+The Who,Going Mobile,youtube:ToxymSLzJeM
+Three Dog Night,Celebrate,
+Tina Turner,River Deep Mountain High,
+Todd Rundgren,Bang the Drum All Day,
+Tom Tom Club,Genius of Love,
+Tom Tom Club,Pleasure of Love,
+Tommy Guerrero,Soul Food Taqueria,youtube:YSykw8vOJ-Y
+Tony Joe White,Polk Salad Annie
+Tony Orlando,Knock Three Times,
+Toots and the Maytals,54-46 Was My Number,youtube:wNxNwvjzGM0
+Tracy Chapman,Fast Car,youtube:AIOAlaACuv4
+Traffic,Medicated Goo,
+Train,Calling All Angels,
+Train,Play That Song,
+Uriah Heep,One Nation One Sun,youtube:Wn_0hWc5hOQ
+Van Morrison,Blue Money,youtube:dECPWpAlgaU
+Van Morrison,Into the Mystic,
+Van Morrison,Jackie Wilson Said,youtube:TY0_1VN7h8c
+Vashti Bunyan,Just Another Diamond Day
+Vivaldi,Four Seasons,youtube:GRxofEmo3HA
+WAR,Galaxy,
+WAR,Spill The Wine,youtube:MYCRIykylOc
+WAR,The Cisco Kid,
+WAR,Why Can't We Be Friends?,youtube:sH0Qda32IKM
+Waylon Jennings,I've Always Been Crazy
+Wilco,What Light,
+Wilson Picket,634-5789,youtube:zBEvDyWVgl4
+ZZ Top,Waitin For The Bus/Jesus Just Left Chicago,
