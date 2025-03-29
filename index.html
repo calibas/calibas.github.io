@@ -1,89 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8"/>
-  <title>Web FV</title>
-
-  <!-- Tabulator CSS (from CDN) -->
-  <link href="css/tabulator.min.css" rel="stylesheet">
-  <link href="css/page.css" rel="stylesheet">
-
-</head>
-<body>
-
-<h1>Tabulator + SheetJS Example</h1>
-
-<div id="controls">
-  <input type="file" id="fileInput" accept=".xlsx,.csv,.txt" />
-  <button id="saveXLSX" disabled>Save as XLSX</button>
-  <button id="saveCSV" disabled>Save as CSV</button>
-</div>
-
-<div id="my-table"></div>
-
-<div id="controls-bottom"></div>
-  <button id="addRow">Add row</button>
-</div>
-
-<script src="js/tabulator.min.js"></script>
-<script src="js/xlsx.full.min.js"></script>
-
-<script src="js/export.js"></script>
-<script src="js/parse.js"></script>
-
-<script>
-// ---------------------------------------------------------------------
-// 1) Initialize an empty Tabulator (no data yet).
-// ---------------------------------------------------------------------
-const table = new Tabulator("#my-table", {
-  // Enable editing
-  // If you know your column structure, specify it here.
-  // For a quick demo, let Tabulator build columns automatically:
-//   autoColumns: true, 
-  // Let cells be edited as text:
-  // editable: true,
-
-  // Some optional layout tweaks:
-  layout: "fitColumns",
-  maxHeight: "800px",
-  maxWidth: "90%",
-  width: "900px",
-
-  // Callback: runs when data is loaded
-  dataLoaded: function(data) {
-    console.log("Data loaded into Tabulator:", data);
-  },
-});
-
-// ---------------------------------------------------------------------
-// 2) Handle file input (XLSX or CSV) with SheetJS, then populate table
-// ---------------------------------------------------------------------
-document.getElementById("fileInput").addEventListener("change", handleFile, false);
-
-
-
-// ---------------------------------------------------------------------
-// 3) Saving/Exporting from Tabulator to XLSX or CSV using SheetJS
-// ---------------------------------------------------------------------
-document.getElementById("saveXLSX").addEventListener("click", function() {
-  exportTableData("xlsx");
-});
-document.getElementById("saveCSV").addEventListener("click", function() {
-  exportTableData("csv");
-});
-document.getElementById("addRow").addEventListener("click", function() {
-  addRowEvent();
-});
-
-function addRowEvent() {
-  table.addRow({},false); // array of objects
-}
-
-(function() {
-  loadCsvFromQueryString();
-})();
-
-</script>
-
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Viewer</title>
+    <script type="module" crossorigin src="/assets/index-VH0R2ivR.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Bzp4TePp.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
