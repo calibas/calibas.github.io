@@ -18,7 +18,7 @@ export class WasmApi {
    * ```js
    * const api = new WasmApi();
    * api.load_preset("Bubble");
-   * const pngBytes = await api.export_png(800, 600, 256);
+   * const pngBytes = await api.export_png(800, 600, 256, false);
    *
    * // Download
    * const blob = new Blob([pngBytes], { type: 'image/png' });
@@ -29,7 +29,7 @@ export class WasmApi {
    * a.click();
    * ```
    */
-  export_png(width: number, height: number, iterations_per_thread: number): Promise<Uint8Array>;
+  export_png(width: number, height: number, iterations_per_thread: number, transparent: boolean): Promise<Uint8Array>;
   /**
    * Check if config is loaded
    */
@@ -111,7 +111,7 @@ export interface InitOutput {
   readonly memory: WebAssembly.Memory;
   readonly wasm_main: () => void;
   readonly __wbg_wasmapi_free: (a: number, b: number) => void;
-  readonly wasmapi_export_png: (a: number, b: number, c: number, d: number) => any;
+  readonly wasmapi_export_png: (a: number, b: number, c: number, d: number, e: number) => any;
   readonly wasmapi_get_config_json: (a: number) => [number, number, number, number];
   readonly wasmapi_get_current_iterations: (a: number) => number;
   readonly wasmapi_get_preset_names: (a: number) => [number, number];
@@ -131,12 +131,12 @@ export interface InitOutput {
   readonly __wbindgen_free: (a: number, b: number, c: number) => void;
   readonly __wbindgen_export_6: WebAssembly.Table;
   readonly __externref_table_dealloc: (a: number) => void;
-  readonly closure1886_externref_shim: (a: number, b: number, c: any) => void;
-  readonly closure1799_externref_shim: (a: number, b: number, c: any) => void;
-  readonly closure1806_externref_shim: (a: number, b: number, c: any, d: any) => void;
-  readonly wasm_bindgen__convert__closures_____invoke__h896ba810511a8433: (a: number, b: number) => void;
-  readonly wasm_bindgen__convert__closures_____invoke__h4583a70ca8243b02: (a: number, b: number) => void;
-  readonly closure1899_externref_shim: (a: number, b: number, c: any, d: any) => void;
+  readonly closure1905_externref_shim: (a: number, b: number, c: any) => void;
+  readonly wasm_bindgen__convert__closures_____invoke__h91320034e9c865bd: (a: number, b: number) => void;
+  readonly wasm_bindgen__convert__closures_____invoke__h72447e5bb2dbda0f: (a: number, b: number) => void;
+  readonly closure1915_externref_shim: (a: number, b: number, c: any, d: any) => void;
+  readonly closure1992_externref_shim: (a: number, b: number, c: any) => void;
+  readonly closure2005_externref_shim: (a: number, b: number, c: any, d: any) => void;
   readonly __wbindgen_start: () => void;
 }
 
