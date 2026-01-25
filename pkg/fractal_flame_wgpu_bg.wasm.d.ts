@@ -23,10 +23,10 @@ export const __wbindgen_realloc: (a: number, b: number, c: number, d: number) =>
 export const __wbindgen_free: (a: number, b: number, c: number) => void;
 export const __wbindgen_export_6: WebAssembly.Table;
 export const __externref_table_dealloc: (a: number) => void;
-export const closure1967_externref_shim: (a: number, b: number, c: any) => void;
-export const wasm_bindgen__convert__closures_____invoke__h823024db25d8441a: (a: number, b: number) => void;
-export const closure2054_externref_shim: (a: number, b: number, c: any) => void;
+export const closure2142_externref_shim: (a: number, b: number, c: any) => void;
 export const wasm_bindgen__convert__closures_____invoke__hdd8ff76e83e06347: (a: number, b: number) => void;
-export const closure1974_externref_shim: (a: number, b: number, c: any, d: any) => void;
-export const closure2067_externref_shim: (a: number, b: number, c: any, d: any) => void;
+export const wasm_bindgen__convert__closures_____invoke__h823024db25d8441a: (a: number, b: number) => void;
+export const closure2229_externref_shim: (a: number, b: number, c: any) => void;
+export const closure2149_externref_shim: (a: number, b: number, c: any, d: any) => void;
+export const closure2242_externref_shim: (a: number, b: number, c: any, d: any) => void;
 export const __wbindgen_start: () => void;
