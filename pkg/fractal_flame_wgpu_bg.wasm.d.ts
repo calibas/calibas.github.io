@@ -1,7 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
 export const memory: WebAssembly.Memory;
-export const wasm_main: () => void;
 export const __wbg_wasmapi_free: (a: number, b: number) => void;
 export const wasmapi_export_png: (a: number, b: number, c: number, d: number, e: number) => any;
 export const wasmapi_get_config_json: (a: number) => [number, number, number, number];
@@ -15,6 +14,7 @@ export const wasmapi_load_config_json: (a: number, b: number, c: number) => [num
 export const wasmapi_load_preset: (a: number, b: number, c: number) => [number, number];
 export const wasmapi_new: () => number;
 export const wasmapi_set_target_iterations: (a: number, b: number) => void;
+export const wasm_main: () => void;
 export const __externref_table_alloc: () => number;
 export const __wbindgen_export_1: WebAssembly.Table;
 export const __wbindgen_exn_store: (a: number) => void;
@@ -23,10 +23,11 @@ export const __wbindgen_realloc: (a: number, b: number, c: number, d: number) =>
 export const __wbindgen_free: (a: number, b: number, c: number) => void;
 export const __wbindgen_export_6: WebAssembly.Table;
 export const __externref_table_dealloc: (a: number) => void;
-export const wasm_bindgen__convert__closures_____invoke__h823024db25d8441a: (a: number, b: number) => void;
-export const closure2150_externref_shim: (a: number, b: number, c: any) => void;
-export const closure2237_externref_shim: (a: number, b: number, c: any) => void;
-export const wasm_bindgen__convert__closures_____invoke__hdd8ff76e83e06347: (a: number, b: number) => void;
-export const closure2157_externref_shim: (a: number, b: number, c: any, d: any) => void;
-export const closure2250_externref_shim: (a: number, b: number, c: any, d: any) => void;
+export const closure2179_externref_shim: (a: number, b: number, c: any) => void;
+export const closure2189_externref_shim: (a: number, b: number, c: any, d: any) => void;
+export const wasm_bindgen__convert__closures_____invoke__hcf68b2b2bf0e0494: (a: number, b: number) => void;
+export const closure2266_externref_shim: (a: number, b: number, c: any) => void;
+export const wasm_bindgen__convert__closures_____invoke__h20445113f1f3d22e: (a: number, b: number) => void;
+export const closure1027_externref_shim: (a: number, b: number, c: any) => void;
+export const closure2279_externref_shim: (a: number, b: number, c: any, d: any) => void;
 export const __wbindgen_start: () => void;
